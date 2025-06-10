@@ -1,12 +1,11 @@
-// Adding the smallest numbers; 
+// Add the any tow beginning smallest number..
+// the output should be [1,4,5,3] > 1 + 3 = 4;
 
-
-function smallestNumber(num) {
-  const sortNum = num.sort((a,b) => a - b ); // Taking the short numbers;
-  return sortNum[0] + sortNum[1];
+function smallestNum (number) {
+ const smallValueAdd = number.sort((a,b) => a - b);
+  return smallValueAdd[0] + smallValueAdd[1];
 }
 
-console.log(smallestNumber([3,5,8,2]));
+console.log(smallestNum([2,3,1]));
 
-const sortNum = number => number.sort((a,b) => a -b).slice(0,2).reduce((x,y)=> x + y); 
-console.log(sortNum([2,4,2]));
+const smallValue = num => num.sort((a,b)=> a -b ).slice(0,2).reduce((x,y) => x + y);
