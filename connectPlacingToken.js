@@ -1,31 +1,39 @@
-// Connects four placing tokens; 
-// Questions : A list of integers representing the columns (from 0 to 6) where tokens are dropped, in order. 
-// The first player is yellow (Y), followed by red (R), alternating turns.
+// code wars kata 6 problems; 
 
+// Creating a function 
 function moveFour(move){
+  // create a varible for the row and teh columns and the boards to store there value; 
   let rows = 6;
-  let cols = 7;
-  let board = Array(rows).fill().map(()=>Array(cols).fill('-'))
+  let columns = 7;
+  let boards = Array(rows).fill().map(()=>Array(columns).fill('-'));
 
-  for(let moveIdx = 0; moveIdx < move.length; moveIdx++){
-    let player = moveIdx % 2 === 0 ? "X" : "Y"
-    let col = move[moveIdx];
+  // going to the loops through
+  for(let moveIndex = 0; moveIndex < move.length; moveIndex++){
+    let player = moveIndex % 2 === 0 ? "Y" : "X"; // if the index number can be divided by the two then return the output x and y 
+    let cols = move[moveIndex] // to move the index of the move number to get the switch; 
 
-    for(let row = rows-1; row >= 0; row--){
-      if(board[row][col] === '-'){
-        board[row][col] = player;
-        break;
-      }
+    for(let rowBottom = rows-1; rowBottom >= 0; rowBottom--){
+      if(boards[rowBottom][cols] === '-') // then it will give hte output of the player 
+        // we have to add the player ;
+        boards[rowBottom] [cols] = player;
+      break; // after the matching one condition the loops will be break; 
     }
   }
-  return board;
+  // returning the boards; 
+  return boards;
 }
 
-function printBoard(board){
-  for(let output of board){
-    console.log(output);
+// to show the output in the console 
+function outputShow(boards){
+  for(let boardsShow of boards){
+    // get the value of the boardsShow; 
+    console.log(boardsShow);
   }
 }
 
-const moveOne = [0,1,2,4,5];
-console.log(moveFour(moveOne));
+// to set the add the value and input ;
+const moveOne = [0,2,3,4];
+
+// to set it to the functions '
+
+outputShow(moveFour(moveOne));
