@@ -11,7 +11,8 @@ function calculation(str){
   // To convert it to the arrays and split it. 
   let replaceAll = str.replaceAll("plus",'+').replaceAll("minus",'-');
   let sum = eval(replaceAll);
-  return sum;
+  let string = String(sum);
+  return string;
 }
 
 const outputOne = "1plus2plus3plus4";
