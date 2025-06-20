@@ -1,9 +1,15 @@
 function findArray(arr1, arr2) {
   // the first param arr1 is for storing the value;
   // looping through from the each arrray to get hte param 1 value'
+  const arrayIndexShow = [];
   for(let i = 0; i < arr1.length; i++){
-    const match = 
+    const match = arr1[i];
+    const indexArr = 1;
+    const showArray = match[indexArr];
+    arrayIndexShow.push(showArray);
+    console.log(showArray);
   }
+  return arrayIndexShow;
   // the seconds param arr2 is for matching the value; target value;
 }
 
