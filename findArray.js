@@ -1,16 +1,23 @@
+// find the array through the index;
+
 function findArray(arr1, arr2) {
-  // the first param arr1 is for storing the value;
-  // looping through from the each arrray to get hte param 1 value'
-  const arrayIndexShow = [];
-  for(let i = 0; i < arr1.length; i++){
-    const match = arr1[i];
-    const indexArr = 1;
-    const showArray = match[indexArr];
-    arrayIndexShow.push(showArray);
-    console.log(showArray);
+  let showIndexResult = []; // For store the index value of the arra1;
+
+  for (let i = 0; i < arr2.length; i++) {
+    // Get the value of the arr2;
+    let index = arr2[i]; // Storing the index.
+    if (index >= 0 && index < arr1.length) {
+      // get the value of the arr2;
+      // to push the index value;
+      const pushIndex = arr1[index];
+      // push it to the showIndexResult;
+      showIndexResult.push(pushIndex);
+    }
   }
-  return arrayIndexShow;
-  // the seconds param arr2 is for matching the value; target value;
+  return showIndexResult;
 }
 
-console.log(findArray([1,2,1,3,4,1]));
+const forArrayOne = [1, 2, 1, 3, 1, 4, 1];
+const indexOne = [1, 3];
+// pushing it to the console, the varaibles names who's storing the arrays;
+console.log(findArray(forArrayOne, indexOne));
